@@ -111,7 +111,8 @@ int main(void)
   /* -3- Toggle PG.6, PG.8, PI.9 and PC.7 IOs in an infinite loop */
   while (1)
   {
-    HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_6);
+    //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_6);
+    HAL_Write_Pin(GPIOG, GPIO_PIN_6, SET);
     /* Insert delay 100 ms */
     HAL_Delay(1000);
     HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_8);
