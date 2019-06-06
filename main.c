@@ -63,7 +63,7 @@ static void SystemClock_Config(void);
   * @param  None
   * @retval None
   */
-int main(void)
+//int main(void)
 {
  /* This sample code shows how to use STM32F2xx GPIO HAL API to toggle PG6, PG7,
     PG10, and PG12 IOs (connected to LED1, LED2, LED3 and LED4 on STM322xG-EVAL board)
@@ -82,7 +82,7 @@ int main(void)
 
   /* -1- Enable GPIOG, GPIOC and GPIOI Clock (to be able to program the configuration registers) */
   __GPIOG_CLK_ENABLE();
-  __GPIOC_CLK_ENABLE();
+ // __GPIOC_CLK_ENABLE();
   __GPIOI_CLK_ENABLE();
 
   /* -2- Configure PG.6, PG.8, PI.9 and PC.7 IOs in output push-pull mode to
@@ -101,21 +101,25 @@ int main(void)
 
   HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
 
-  GPIO_InitStruct.Pin = GPIO_PIN_7;
+ /* GPIO_InitStruct.Pin = GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FAST;
 
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);*/
 
   /* -3- Toggle PG.6, PG.8, PI.9 and PC.7 IOs in an infinite loop */
   while (1)
   {
+<<<<<<< HEAD
     //HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_6);
     HAL_Write_Pin(GPIOG, GPIO_PIN_6, SET);
+=======
+   // HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_6);
+>>>>>>> veer-Singh-patch-1
     /* Insert delay 100 ms */
-    HAL_Delay(1000);
-    HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_8);
+  //  HAL_Delay(1000);
+  //  HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_8);
     /* Insert delay 100 ms */
     HAL_Delay(1000);
     HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_9);
